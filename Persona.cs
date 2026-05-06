@@ -9,15 +9,19 @@ public class Persona
     {
         get { return edad;}
         set {
-            if(value >= 0 && value <= 110) {
+            if(value >= 0 && value <= 110) 
+            {
                 edad = value;
-            } else {
+            } 
+            else 
+            {
                 Console.WriteLine("Error.. La edad debe estar entre 0-110");
             }
         }
     }
 
-    public Persona(
+    public Persona
+    (
         string nombre,
         string documento,
         string correo,
@@ -32,7 +36,7 @@ public class Persona
 
     public virtual void MostrarInfo() 
     {
-        Console.WriteLine("======================");
+        Console.WriteLine("=========================");
         Console.WriteLine("Nombre: " + this.nombre);
         Console.WriteLine("Documento: " + this.documento);
         Console.WriteLine("Correo: " + this.correo);

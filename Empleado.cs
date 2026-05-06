@@ -5,17 +5,21 @@ public class Empleado : Persona
     public double Sueldo
     {
         get {return sueldo;}
-        set {
+        set 
+        {
             if(value >= 0)
             {
                 sueldo = value;
-            } else {
+            } 
+            else 
+            {
                 Console.WriteLine("Sueldo no puede ser negativo!");
             }
         }
     }
 
-    public Empleado (
+    public Empleado 
+       (
             string nombre,
             string documento,
             string correo,
@@ -26,7 +30,24 @@ public class Empleado : Persona
         :base(nombre, documento, correo, edad)
         {
             this.sueldo = sueldo;
-            this.Cargo = cargo;
         }
+
+        public override void MostrarInfo()
+        {
+            base.MostrarInfo();
+            Console.WriteLine("Cargo: " + Cargo),
+            Console.WriteLine("Sueldo: " + Sueldo.ToString("NO"));
+        }
+
+        public void CalcularSueldo (string tipo)
+        {
+            Console.WriteLine(this.sueldo * 0.9);
+        }
+
+        public void CalcularSueldo (double descuento)
+        {
+            Console.WriteLine(this.Sueldo * descuento);
+        }
+
 
 }
